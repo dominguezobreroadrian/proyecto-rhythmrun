@@ -19,8 +19,8 @@ class ControladorResultados extends Controller
 
         // Evitar que el mismo usuario envíe dos resultados al mismo reto
         $existe = Resultado::where('user_id', $request->user()->id)
-                           ->where('challenge_id', $reto->id)
-                           ->exists();
+                            ->where('challenge_id', $reto->id)
+                            ->exists();
 
         if ($existe) {
             return response()->json([

@@ -16,8 +16,8 @@ class ControladorSeguimientos extends Controller
         }
 
         $existe = Seguimiento::where('follower_id', $request->user()->id)
-                             ->where('following_id', $usuario->id)
-                             ->exists();
+                                ->where('following_id', $usuario->id)
+                                ->exists();
 
         if ($existe) {
             return response()->json(['message' => 'Ya sigues a este usuario'], 409);
@@ -35,8 +35,8 @@ class ControladorSeguimientos extends Controller
     public function unfollow(Request $request, User $usuario)
     {
         Seguimiento::where('follower_id', $request->user()->id)
-                   ->where('following_id', $usuario->id)
-                   ->delete();
+                    ->where('following_id', $usuario->id)
+                    ->delete();
 
         return response()->json(['message' => 'Has dejado de seguir a ' . $usuario->name]);
     }
@@ -45,9 +45,9 @@ class ControladorSeguimientos extends Controller
     public function followers(User $usuario)
     {
         $seguidores = Seguimiento::where('following_id', $usuario->id)
-                                 ->with('follower:id,name')
-                                 ->get()
-                                 ->pluck('follower');
+                                    ->with('follower:id,name')
+                                    ->get()
+                                    ->pluck('follower');
 
         return response()->json($seguidores);
     }
@@ -56,9 +56,9 @@ class ControladorSeguimientos extends Controller
     public function following(User $usuario)
     {
         $seguidos = Seguimiento::where('follower_id', $usuario->id)
-                               ->with('following:id,name')
-                               ->get()
-                               ->pluck('following');
+                                ->with('following:id,name')
+                                ->get()
+                                ->pluck('following');
 
         return response()->json($seguidos);
     }
