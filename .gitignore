@@ -1,0 +1,59 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+/backend/.env
+/backend/.env.*
+!/backend/.env.example
+/frontend/.env
+/frontend/.env.*
+!/frontend/.env.example
+
+# Installed dependencies
+/backend/vendor/
+/frontend/node_modules/
+/backend/auth.json
+
+# Generated frontend files
+/frontend/dist/
+/frontend/coverage/
+
+# Laravel runtime data
+/backend/bootstrap/cache/*.php
+!/backend/bootstrap/cache/.gitignore
+/backend/storage/framework/cache/data/*
+/backend/storage/framework/cache/.gitignore
+/backend/storage/framework/cache/data/.gitignore
+/backend/storage/framework/sessions/*
+/backend/storage/framework/sessions/.gitignore
+/backend/storage/framework/testing/*
+/backend/storage/framework/testing/.gitignore
+/backend/storage/framework/views/*
+/backend/storage/framework/views/.gitignore
+/backend/storage/*.key
+/backend/storage/logs/*.log
+/backend/storage/logs/.gitignore
+/backend/storage/app/private/*
+/backend/storage/app/private/.gitignore
+/backend/storage/app/public/*
+/backend/storage/app/public/.gitignore
+/backend/database/*.sqlite
+/backend/database/*.sqlite-*
+/backend/public/build/
+/backend/public/hot
+/backend/public/storage
+
+# Test and tool output
+/.phpunit.result.cache
+/backend/.phpunit.result.cache
+/.phpunit.cache/
+/backend/.phpunit.cache/
+/auth.json
+
+# Operating systems and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+/frontend/.vscode/*
+!/frontend/.vscode/extensions.json
